@@ -39,14 +39,14 @@ export const ShowNFTs = (props) => {
     //     sellerFeeBasisPoints: 500
     //   })
     // console.log(nft)
-    const { uri } = await metaplex
-      .nfts()
-      .uploadMetadata({
-        name: "My NFT",
-        description: "My description",
-        image: "/fallbackImage.jpg",
-      });
-    console.log(uri); // https://arweave.net/789
+    // const { uri } = await metaplex
+    //   .nfts()
+    //   .uploadMetadata({
+    //     name: "My NFT",
+    //     description: "My description",
+    //     image: "/fallbackImage.jpg",
+    //   });
+    // console.log(uri); // https://arweave.net/789
   };
 
   return (
@@ -78,9 +78,9 @@ export const ShowNFTs = (props) => {
               </div>
             )}
           </div>
-          <div>
+          {/* <div>
             <button onClick={onMint}>Mint</button>
-          </div>
+          </div> */}
         </div>
       </div>
     )

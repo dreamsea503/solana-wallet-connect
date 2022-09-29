@@ -33,7 +33,7 @@ export default function Home() {
           new SlopeWalletAdapter(),
           new SolflareWalletAdapter({ network }),
           new TorusWalletAdapter(),
-      new BackpackWalletAdapter()
+          new BackpackWalletAdapter()
     ],
       [network]
   );
