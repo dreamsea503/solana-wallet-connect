@@ -8,6 +8,7 @@ import {
     SlopeWalletAdapter,
     SolflareWalletAdapter,
     TorusWalletAdapter,
+    BackpackWalletAdapter
 } from '@solana/wallet-adapter-wallets';
 import {
   WalletConnectButton,
@@ -32,7 +33,8 @@ export default function Home() {
           new SlopeWalletAdapter(),
           new SolflareWalletAdapter({ network }),
           new TorusWalletAdapter(),
-      ],
+      new BackpackWalletAdapter()
+    ],
       [network]
   );
 
