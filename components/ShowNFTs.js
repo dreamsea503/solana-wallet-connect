@@ -2,6 +2,7 @@ import styles from "../styles/Home.module.css";
 import { useMetaplex } from "./useMetaplex";
 import { useEffect, useState } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
+import Image from "next/image";
 
 export const ShowNFTs = (props) => {
   const { metaplex } = useMetaplex();
@@ -71,7 +72,7 @@ export const ShowNFTs = (props) => {
             {nft && (
               <div className={styles.nftPreview}>
                 <h1>{nft.name}</h1>
-                <img
+                <Image
                   src={nft.metadata.image || "/fallbackImage.jpg"}
                   alt="The downloaded illustration of the provided NFT address."
                 />
