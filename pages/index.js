@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css'
 import { useMemo, useState, useEffect } from 'react';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { ConnectionProvider, useWallet, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
     GlowWalletAdapter,
@@ -24,6 +24,8 @@ export default function Home() {
 
   const [network, setNetwork] = useState(WalletAdapterNetwork.Testnet);
 
+  const wallet = useWallet();
+
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
   const wallets = useMemo(
@@ -35,10 +37,11 @@ export default function Home() {
           new TorusWalletAdapter(),
           new BackpackWalletAdapter()
     ],
-      [network]
+      []
   );
 
   const handleChange = (event) => {
+    console.log(event.target.value);
     switch(event.target.value){
       case "devnet":
         setNetwork(WalletAdapterNetwork.Devnet);

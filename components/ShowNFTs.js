@@ -54,9 +54,9 @@ export const ShowNFTs = (props) => {
     wallet.connected && (
       <div>
         <select onChange={props.onClusterChange} className={styles.dropdown}>
+          <option value="testnet">Testnet</option>
           <option value="devnet">Devnet</option>
           <option value="mainnet">Mainnet</option>
-          <option value="testnet">Testnet</option>
         </select>
         <div>
           <div className={styles.container}>
